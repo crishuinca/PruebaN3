@@ -71,6 +71,7 @@ def  opc_1():
     print("PEDIDO REALIZADO CON ÉXITO")
     time.sleep(2)
 def  opc_2():
+    os.system("cls")
     if len(pedidos) == 0:
         print("No  existen pedidos, haga uno en la opcion numero 1:")
         time.sleep(3)
@@ -86,20 +87,40 @@ def  opc_2():
         msvcrt.getch()
 
 def  opc_3():
-    pass
+    os.system("cls")
+    if len(pedidos) == 0:
+        print("No  existen pedidos, haga uno en la opcion numero 1:")
+        time.sleep(3)
+    else:
+        print("BUSQUEDA DE PEDIDO POR RUT")
+        time.sleep(2)
+        os.system("cls")
+        busqueda = int(input("Ingrese el rut para  la busqueda : "))
+        for x in (pedidos):
+            if x[0]== busqueda:
+                print("RUT ENCONTRADO")
+                msvcrt.getch()
+            else:
+                print("EL RUT NO SE ENCUENTRA")
+                msvcrt.getch()
 
 def  opc_4():
     os.system("cls")
-    print("IMPRIMIR HOJA DE RUTA")
-    time.sleep(2)
-    os.system("cls")
-
-    nombre_archivo = input("Ingrese el nombre del archivo : ")
-    import csv 
-    with open(f"{nombre_archivo}"+".csv","w",newline="")as archivo:
-        for x in (pedidos):
-            archivo.write(f"\t\tPEDIDOS\nRUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCILINDROS 5KG:{x[3]} \nCILINDROS 15KG:{x[4]} \nTOTAL:{x[5]}\n\n")
-        print("EL ARCHIVO FUE CREADO CON ÉXITO !")
+    if len(pedidos) == 0:
+        print("No  existen pedidos, haga uno en la opcion numero 1:")
         time.sleep(3)
+    else:
+        os.system("cls")
+        print("IMPRIMIR HOJA DE RUTA")
+        time.sleep(2)
+        os.system("cls")
+
+        nombre_archivo = input("Ingrese el nombre del archivo : ")
+        import csv 
+        with open(f"{nombre_archivo}"+".csv","w",newline="")as archivo:
+            for x in (pedidos):
+                archivo.write(f"\t\tPEDIDOS\nRUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCILINDROS 5KG:{x[3]} \nCILINDROS 15KG:{x[4]} \nTOTAL:{x[5]}\n\n")
+            print("EL ARCHIVO FUE CREADO CON ÉXITO !")
+            time.sleep(3)
         
 
