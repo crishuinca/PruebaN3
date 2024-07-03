@@ -71,8 +71,18 @@ def  opc_1():
     print("PEDIDO REALIZADO CON ÉXITO")
     time.sleep(2)
 def  opc_2():
-    print(pedidos)
+    os.system("cls")
+    print("LISTAR PEDIDOS")
+    
+    time.sleep(1)
+    os.system("cls")
+    for x in (pedidos):
+        print(f"RUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCILINDROS 5KG:{x[3]} \nCILINDROS 15KG:{x[4]} \nTOTAL:{x[5]}\n\n")
+    print("<<PRESIONE UNA TECLA PARA CONTINUAR>>")
     msvcrt.getch()
+
+
+    
 
 def  opc_3():
     pass
