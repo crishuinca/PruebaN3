@@ -1,10 +1,12 @@
 import os, time , msvcrt
 from funciones import *
 
+os.system("cls")
+print ("Bienvenido a GasXplosive")
+time.sleep(1)
+
 while True:
-    os.system("cls")
-    print ("Bienvenido a GasXplosive")
-    time.sleep(1)
+    
     os.system("cls")
     print("""
           __________________________

@@ -6,16 +6,70 @@ def  opc_1():
     os.system("cls")
     print("REGISTRAR PEDIDO.")
     time.sleep(2)
-    rut = int(input("Ingrese su RUT (sin guiones ni puntos) : "))
-    nombre = input("Ingrese su nombre : ")
-    direccion = input("Ingrese la dirección deseada : ")
-    cilindro_5 = int(input("Ingrese cuantos cilindros de  5 kilos quiere :"))
-    total_5 = cilindro_5*12500
-    cilindro_15 = int(input("Ingrese cuantos cilindros de 15 kilos quiere :"))
-    total_15 = cilindro_15*25500
+    
+    while True:
+        try:
+            rut = int(input("Ingrese su RUT (sin guiones ni puntos) : "))
+            if len(str(rut))>= 8 and len(str(rut))<=9:
+                break
+            else:
+                print("RUT invalido, ingrese denuevo")
+                time.sleep(2)
+        except:
+            print("RUT invalido, ingrese denuevo")
+            time.sleep(2)
+
+    while True:
+        nombre = input("Ingrese su nombre : ")
+        if len(nombre)>=3:
+            break
+        else:
+            print("El nombre debe tener 3 caracteres como minimo!!")
+
+    while True:
+        direccion = input("Ingrese la dirección deseada : ")
+        if len(direccion)>=2:
+                break
+        else:
+                print("La dirrecion debe tener 2 caracteres como minimo!!")
+    while True:
+        comuna = input("Ingrese la comuna  : ")
+        if len(direccion)>=3:
+            break
+        else:
+            print("La comuna debe tener 3 caracteres como minimo!!")
+
+    while True:
+        try:
+            cilindro_5 = int(input("Ingrese cuantos cilindros de  5 kilos quiere :"))
+            if cilindro_5 >=1:
+                total_5 = cilindro_5*12500
+                break
+            else:
+                print("No puede agregar 0 cilindros  al pedido!!")
+                time.sleep(2)
+        except:
+            print("Valor ingresado es invalido!!")
+            time.sleep(2)
+    
+    while True:
+        try:
+            cilindro_15 = int(input("Ingrese cuantos cilindros de 15 kilos quiere :"))
+            if cilindro_15 >=1:
+                total_15 = cilindro_15*25500
+                break
+            else:
+                print("No puede agregar 0 cilindros  al pedido!!")
+                time.sleep(2)
+        except:
+            print("Valor ingresado es invalido!!")
+            time.sleep(2)
     total = total_5+total_15
     pedido=[rut,nombre,direccion,cilindro_5,cilindro_15,total]
     pedidos.append(pedido)
+    os.system ("cls")
+    print("PEDIDO REALIZADO CON ÉXITO")
+    time.sleep(2)
 def  opc_2():
     print(pedidos)
     msvcrt.getch()
