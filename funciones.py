@@ -34,7 +34,7 @@ def  opc_1():
                 print("La dirrecion debe tener 2 caracteres como minimo!!")
     while True:
         comuna = input("Ingrese la comuna  : ")
-        if len(direccion)>=3:
+        if len(comuna)>=3:
             break
         else:
             print("La comuna debe tener 3 caracteres como minimo!!")
@@ -65,7 +65,7 @@ def  opc_1():
             print("Valor ingresado es invalido!!")
             time.sleep(2)
     total = total_5+total_15
-    pedido=[rut,nombre,direccion,cilindro_5,cilindro_15,total]
+    pedido=[rut,nombre,direccion,comuna,cilindro_5,cilindro_15,total]
     pedidos.append(pedido)
     os.system ("cls")
     print("PEDIDO REALIZADO CON ÉXITO")
@@ -82,7 +82,7 @@ def  opc_2():
         time.sleep(1)
         os.system("cls")
         for x in (pedidos):
-            print(f"RUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCILINDROS 5KG:{x[3]} \nCILINDROS 15KG:{x[4]} \nTOTAL:{x[5]}\n\n")
+            print(f"RUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCOMUNA:{x[3]} \nCILINDROS 5KG:{x[4]} \nCILINDROS 15KG:{x[5]} \nTOTAL:{x[6]}\n\n")
         print("<<PRESIONE UNA TECLA PARA CONTINUAR>>")
         msvcrt.getch()
 
@@ -119,7 +119,7 @@ def  opc_4():
         import csv 
         with open(f"{nombre_archivo}"+".csv","w",newline="")as archivo:
             for x in (pedidos):
-                archivo.write(f"\t\tPEDIDOS\nRUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCILINDROS 5KG:{x[3]} \nCILINDROS 15KG:{x[4]} \nTOTAL:{x[5]}\n\n")
+                archivo.write(f"\t\tPEDIDOS\nRUT:{x[0]} \nNOMBRE:{x[1]} \nDIRRECCION:{x[2]} \nCOMUNA: {x[3]} \nCILINDROS 5KG:{x[4]} \nCILINDROS 15KG:{x[5]} \nTOTAL:{x[6]}\n\n")
             print("EL ARCHIVO FUE CREADO CON ÉXITO !")
             time.sleep(3)
         
