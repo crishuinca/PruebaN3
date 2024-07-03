@@ -34,6 +34,9 @@ while True:
         elif opc == 5:
             os.system("cls")
             print("Gracias por la preferencia a GASXPLOSIVE")
+
+            time.sleep(5)
+            print("gracias a dios🙏")
             break
         else:
             print("La opción tiene que ser entre 1 y 5")
